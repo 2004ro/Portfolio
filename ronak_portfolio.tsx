@@ -23,32 +23,32 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Dynamic Resource Allocation System',
-      date: 'May 2025',
-      description: 'Designed and developed a dynamic system to intelligently manage and allocate computational resources based on real-time workload demands.',
-      tech: ['Python', 'Node.js', 'SQL'],
-      highlights: ['Real-time monitoring', 'Bottleneck prevention', 'Optimal performance']
+      title: 'Secure Bank',
+      date: 'Dec 2025',
+      description: 'Designed and developed a secure online banking web application to simulate user authentication and basic banking operations.',
+      tech: ['JavaScript', 'HTML', 'CSS', 'Node.js'],
+      highlights: ['Implemented interactive and responsive user interfaces using modern frontend tools to ensure smooth user experience and reliability.']
+    },
+    {
+      title: 'Medical Health Record Management System',
+      date: 'Nov-Dec 2025',
+      description: 'Developed a scalable healthcare record management system with secure backend services and REST APIs.',
+      tech: ['Java', 'Spring Boot', 'MySQL', 'Docker', 'REST APIs'],
+      highlights: ['Implemented microservices architecture to improve performance and maintainability.']
     },
     {
       title: 'Flight Route Optimization System',
       date: 'July 2025',
       description: 'Developed a system to calculate the most efficient flight paths by analyzing variables such as fuel consumption, weather patterns, and air traffic control data.',
-      tech: ['Python', 'SQL', 'Power BI'],
-      highlights: ['Cost optimization', 'Routing algorithms', 'Network efficiency']
+      tech: ['Python', 'SQL'],
+      highlights: ['Utilized routing algorithms to minimize operational costs and flight duration, improving overall network efficiency.']
     },
     {
-      title: 'Photography Website',
-      date: 'Oct 2023',
-      description: 'Built a responsive photography website with modern design principles.',
-      tech: ['JavaScript', 'CSS', 'HTML5'],
-      highlights: ['Responsive design', 'Interactive UI', 'Portfolio showcase']
-    },
-    {
-      title: 'Rain Drop Sensor',
-      date: 'Nov 2023',
-      description: 'Designed and built a raindrop sensor system using Arduino Uno to detect and measure rainfall in real time.',
-      tech: ['Arduino UNO', 'C++', 'IoT'],
-      highlights: ['Real-time detection', 'Environmental monitoring', 'Sensor integration']
+      title: 'Dynamic Resource Allocation System',
+      date: 'May 2025',
+      description: 'Designed and developed a dynamic system to intelligently manage and allocate computational resources based on real-time workload demands.',
+      tech: ['Python', 'Node.js', 'SQL'],
+      highlights: ['Implemented algorithms to monitor resource utilization and prevent system bottlenecks, ensuring optimal performance and stability.']
     }
   ];
 
@@ -62,7 +62,7 @@ export default function Portfolio() {
     { name: 'Enterprise Design Thinking Practitioner', date: 'April 2024' }
   ];
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -79,7 +79,7 @@ export default function Portfolio() {
           <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Ronak
           </h1>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {['home', 'about', 'skills', 'projects', 'certificates', 'contact'].map((section) => (
@@ -167,7 +167,7 @@ export default function Portfolio() {
               <p className="text-gray-400">Aug 2023 - Present | CGPA: 7.04</p>
               <p className="text-gray-400">Phagwara, Punjab</p>
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-cyan-400 mt-8">Internship Experience</h3>
+            <h3 className="text-2xl font-bold mb-4 text-cyan-400 mt-8">Training</h3>
             <div>
               <h4 className="text-xl font-semibold">Summer Internship Training</h4>
               <p className="text-gray-400">June-July 2025</p>
