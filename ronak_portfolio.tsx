@@ -25,30 +25,33 @@ export default function Portfolio() {
     {
       title: 'Secure Bank',
       date: 'Dec 2025',
-      description: 'Designed and developed a secure online banking web application to simulate user authentication and basic banking operations.',
+      description: 'Built a full-stack real-time fraud detection and transaction monitoring system with a live dashboard tracking Total Transactions, Fraud Detected, Total Volume, and Risk Score with live trend charts (24h).',
       tech: ['JavaScript', 'HTML', 'CSS', 'Node.js'],
-      highlights: ['Implemented interactive and responsive user interfaces using modern frontend tools to ensure smooth user experience and reliability.']
+      highlights: ['Integrated a RandomForestClassifier ML model for real-time fraud detection with live risk scoring; built Analytics module visualizing risk distribution (High/Medium/Low) and fraud pattern classification (High Amount, Foreign Location, Suspicious Merchant, Time Anomaly) across live transaction streams.']
     },
     {
       title: 'Medical Health Record Management System',
       date: 'Nov-Dec 2025',
-      description: 'Developed a scalable healthcare record management system with secure backend services and REST APIs.',
+      description: 'Architected a scalable, healthcare record management system using Spring Boot microservices with RESTful APIs, MySQL database, and Docker containerization supporting full CRUD for patient records, diagnoses, and prescriptions.',
       tech: ['Java', 'Spring Boot', 'MySQL', 'Docker', 'REST APIs'],
-      highlights: ['Implemented microservices architecture to improve performance and maintainability.']
+      highlights: ['Implemented role-based access control (RBAC) for three user roles (Doctor, Patient, Admin) with Spring Security; reduced inter-service coupling via microservices architecture, improving system maintainability and scalability.'],
+      github: 'https://github.com/2004ro/Medical-Health-Record-System'
     },
     {
       title: 'Flight Route Optimization System',
       date: 'July 2025',
-      description: 'Developed a system to calculate the most efficient flight paths by analyzing variables such as fuel consumption, weather patterns, and air traffic control data.',
+      description: 'Applied SQL-based data pipelines and graph traversal algorithms to process multivariable route data; optimized query performance and reduced flight path computation time, improving overall network efficiency.',
       tech: ['Python', 'SQL'],
-      highlights: ['Utilized routing algorithms to minimize operational costs and flight duration, improving overall network efficiency.']
+      highlights: ['Utilized routing algorithms to minimize operational costs and flight duration, improving overall network efficiency.'],
+      github: 'https://github.com/2004ro/Flight-route-optimization-system'
     },
     {
       title: 'Dynamic Resource Allocation System',
       date: 'May 2025',
-      description: 'Designed and developed a dynamic system to intelligently manage and allocate computational resources based on real-time workload demands.',
+      description: 'Designed and developed an adaptive resource allocation framework in Python that dynamically monitors and reallocates CPU and memory resources across multiple concurrent programs based on real-time CPU/memory workload demands using psutil monitoring with Tkinter GUI visualization.',
       tech: ['Python', 'Node.js', 'SQL'],
-      highlights: ['Implemented algorithms to monitor resource utilization and prevent system bottlenecks, ensuring optimal performance and stability.']
+      highlights: ['Implemented threshold-based adaptive control algorithms to throttle and redistribute low-priority processes, ensuring system stability; built an interactive Tkinter dashboard for real-time visualization of resource allocation, program status, and threshold alerts.'],
+      github: 'https://github.com/2004ro/Adaptive-Resource-Allocation-in-Multiprogramming-Systems'
     }
   ];
 
@@ -119,9 +122,12 @@ export default function Portfolio() {
       <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8 animate-bounce">
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-6xl font-bold">
-              R
-            </div>
+            <img
+              src="ronak.jpg"
+              alt="Ronak"
+              className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-transparent bg-gradient-to-br from-blue-500 to-cyan-500"
+              style={{ backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box' }}
+            />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
             Hi, I'm Ronak
@@ -171,7 +177,11 @@ export default function Portfolio() {
             <div>
               <h4 className="text-xl font-semibold">Summer Internship Training</h4>
               <p className="text-gray-400">June-July 2025</p>
-              <p className="text-gray-300 mt-2">Completed comprehensive training on fundamentals of Data Structures and Algorithms (DSA) using Python, C, and Java.</p>
+              <ul className="text-gray-300 mt-2 list-disc list-inside space-y-2">
+                <li>Completed 2-month intensive summer training in DSA using C++, covering arrays, linked lists, stacks, queues, trees, graphs, and algorithm design principles.</li>
+                <li>Gained hands-on experience with sorting algorithms (Quick Sort, Merge Sort), searching techniques (Binary Search), dynamic programming, and C++ STL — building strong foundations for software development and technical interviews.</li>
+                <li><span className="font-semibold text-blue-400">Tech stacks used:</span> Python, C, C++</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -212,7 +222,14 @@ export default function Portfolio() {
             {projects.map((project, idx) => (
               <div key={idx} className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-blue-500/20 transition-all hover:transform hover:scale-105">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-cyan-400">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-cyan-400 flex items-center gap-2">
+                    {project.title}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="View on GitHub">
+                        <Github size={20} />
+                      </a>
+                    )}
+                  </h3>
                   <span className="text-sm text-gray-400">{project.date}</span>
                 </div>
                 <p className="text-gray-300 mb-4">{project.description}</p>

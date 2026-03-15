@@ -6,10 +6,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #ffffff;
-    background: linear-gradient(135deg, #0f172a 0%, #0f172a 50%, #1e293b 100%);
+    color: #f8fafc;
+    background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #0f172a 40%, #020617 100%);
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
@@ -44,12 +45,13 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #60a5fa, #06b6d4, #10b981);
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
 }
 
 .nav-menu {
@@ -126,27 +128,32 @@ body {
 }
 
 .avatar-circle {
-    width: 8rem;
-    height: 8rem;
+    width: 9rem;
+    height: 9rem;
     margin: 0 auto;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 800;
     color: #ffffff;
+    object-fit: cover;
+    padding: 0.35rem;
+    box-shadow: 0 0 30px rgba(129, 140, 248, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: glowProfile 4s ease-in-out infinite alternate;
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #60a5fa, #06b6d4, #10b981);
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
 }
 
 .hero-subtitle {
@@ -178,22 +185,24 @@ body {
 }
 
 .cta-btn {
-    padding: 0.75rem 2rem;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
     color: #ffffff;
     border: none;
-    border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 3rem;
+    font-size: 1.125rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: scale(1);
     margin-bottom: 3rem;
+    box-shadow: 0 10px 25px rgba(129, 140, 248, 0.4);
 }
 
 .cta-btn:hover {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(192, 132, 252, 0.6);
+    transform: scale(1.05) translateY(-3px);
 }
 
 .scroll-down {
@@ -240,11 +249,18 @@ body {
 
 /* About Section */
 .about-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.about-card:hover {
+    border-color: rgba(129, 140, 248, 0.3);
 }
 
 .about-subtitle {
@@ -286,17 +302,20 @@ body {
 }
 
 .skill-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .skill-card:hover {
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-    transform: translateY(-0.25rem);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-8px);
 }
 
 .skill-title {
@@ -330,17 +349,20 @@ body {
 }
 
 .project-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover {
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(129, 140, 248, 0.2);
+    border-color: rgba(129, 140, 248, 0.4);
+    transform: translateY(-10px) scale(1.02);
 }
 
 .project-header {
@@ -396,11 +418,12 @@ body {
 }
 
 .tech-tag {
-    padding: 0.25rem 0.75rem;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 9999px;
-    font-size: 0.75rem;
+    padding: 0.35rem 1rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(192, 132, 252, 0.15));
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: #ffffff;
 }
 
@@ -413,44 +436,49 @@ body {
 }
 
 .certificate-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 0.75rem;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
     padding: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .certificate-card:hover {
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-    transform: translateY(-0.25rem);
+    box-shadow: 0 25px 50px rgba(129, 140, 248, 0.2);
+    border-color: rgba(129, 140, 248, 0.4);
+    transform: translateY(-8px);
 }
 
 .certificate-card .icon {
-    color: #06b6d4;
-    width: 2rem;
-    height: 2rem;
+    color: #818cf8;
+    width: 2.5rem;
+    height: 2.5rem;
     margin-bottom: 0.75rem;
 }
 
 .certificate-title {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: #ffffff;
 }
 
 .certificate-date {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .achievements-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .achievements-title {
@@ -480,16 +508,18 @@ body {
 }
 
 .contact-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 0.75rem;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
     padding: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     color: #ffffff;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .contact-card:hover {
@@ -555,16 +585,46 @@ body {
 }
 
 /* Animations */
+@keyframes glowProfile {
+    0% {
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+        border-color: rgba(56, 189, 248, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 40px rgba(192, 132, 252, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.4);
+        border-color: rgba(192, 132, 252, 1);
+    }
+}
+
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-10px);
     }
+
     60% {
         transform: translateY(-5px);
     }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1.2);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive Design */

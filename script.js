@@ -1,12 +1,12 @@
 // Navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     let mobileMenuOpen = false;
 
     // Scroll event for navbar styling
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mobile menu toggle
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function () {
         mobileMenuOpen = !mobileMenuOpen;
         if (mobileMenuOpen) {
             mobileMenu.style.display = 'block';
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listeners to navigation links
     document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const sectionId = this.getAttribute('data-section');
             scrollToSection(sectionId);
@@ -94,44 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize active link on page load
     updateActiveLink();
 
-    // Add hover effects for project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
-
-    // Add hover effects for skill cards
-    document.querySelectorAll('.skill-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-4px)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add hover effects for certificate cards
-    document.querySelectorAll('.certificate-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-4px)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add click effect for CTA button
-    document.querySelector('.cta-btn').addEventListener('click', function() {
-        const projectsSection = document.getElementById('projects');
-        if (projectsSection) {
+    // Call-to-action button
+    const ctaBtn = document.querySelector('.cta-btn');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', function () {
             scrollToSection('projects');
-        }
+        });
+    }
+
+    // Scroll Reveal Animation (Intersection Observer)
+    const revealElements = document.querySelectorAll('.about-card, .skill-card, .project-card, .certificate-card, .achievements-card, .contact-card, .section-title, .hero-content');
+
+    // Add reveal class to all target elements
+    revealElements.forEach(el => {
+        el.classList.add('reveal');
+    });
+
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Animate only once per section
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealOnScroll.observe(el);
     });
 });
