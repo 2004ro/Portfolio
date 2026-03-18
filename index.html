@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Custom Cursor elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <div class="portfolio">
         <!-- Navigation -->
         <nav id="navbar" class="navbar">
@@ -56,7 +63,9 @@
                     <img src="ronak.jpg" alt="Ronak" class="avatar-circle">
                 </div>
                 <h1 class="hero-title">Hi, I'm Ronak</h1>
-                <p class="hero-subtitle">Computer Science Student | Big Data Analyst | Full Stack Developer</p>
+                <p class="hero-subtitle">
+                    <span id="typed-text"></span><span class="cursor-blink">|</span>
+                </p>
                 <div class="hero-links">
                     <a href="https://github.com/2004ro" target="_blank" rel="noopener noreferrer" class="social-link">
                         <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -192,7 +201,10 @@
                     Projects
                 </h2>
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800" alt="Secure Bank" class="project-img">
+                        </div>
                         <div class="project-header">
                             <h3 class="project-title">Secure Bank</h3>
                             <span class="project-date">Dec 2025</span>
@@ -216,7 +228,10 @@
                             <span class="tech-tag">Node.js</span>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Medical Health Record" class="project-img">
+                        </div>
                         <div class="project-header">
                             <h3 class="project-title" style="display: flex; align-items: center; gap: 8px;">
                                 Medical Health Record Management System
@@ -252,7 +267,10 @@
                             <span class="tech-tag">REST APIs</span>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800" alt="Flight Route Optimization" class="project-img">
+                        </div>
                         <div class="project-header">
                             <h3 class="project-title" style="display: flex; align-items: center; gap: 8px;">
                                 Flight Route Optimization System
@@ -284,7 +302,10 @@
                             <span class="tech-tag">SQL</span>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card tilt-card">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Dynamic Resource Allocation" class="project-img">
+                        </div>
                         <div class="project-header">
                             <h3 class="project-title" style="display: flex; align-items: center; gap: 8px;">
                                 Dynamic Resource Allocation System
