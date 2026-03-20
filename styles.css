@@ -341,6 +341,115 @@ body {
     color: #ffffff;
 }
 
+/* New Skills Showcase Styles */
+.skills-showcase-container {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 3rem 0; /* Remove horizontal padding for seamless scroll */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Optional fading edges for premium look */
+.skills-showcase-container::before,
+.skills-showcase-container::after {
+    background: linear-gradient(to right, #0f172a 0%, transparent 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 60px;
+    z-index: 2;
+    top: 0;
+    pointer-events: none;
+}
+.skills-showcase-container::before {
+    left: 0;
+}
+.skills-showcase-container::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.skills-marquee {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.skills-marquee:hover {
+    animation-play-state: paused;
+}
+
+.skills-marquee-content {
+    display: flex;
+    gap: 3.5rem;
+    padding: 0 1.75rem; /* Half gap to ensure perfect loop */
+    align-items: center;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.skill-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.skill-icon-item i {
+    font-size: 4.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.05));
+    transition: all 0.3s ease;
+}
+
+.skill-icon-item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #cbd5e1;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.skill-icon-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-icon-item:hover i {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+}
+
+.skill-icon-item:hover span {
+    color: #38bdf8;
+    opacity: 1;
+}
+
+.skills-other-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills-other-container .skill-card {
+    height: 100%;
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
